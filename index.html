@@ -2,57 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>PIF BAKE - Order Page</title>
-  <link rel="stylesheet" href="style.css">
+  <title>PIF BAKE</title>
 </head>
 <body>
-  <header>
-    <img src="PIF BAKE(1).png" alt="PIF BAKE Logo" class="logo">
-    <h1>Welcome to PIF BAKE!</h1>
-    <p>Delicious treats made for you 🍪</p>
-  </header>
+  <h1>Welcome to PIF BAKE</h1>
+  <img src="pifbake-logo.png" alt="PIF BAKE Logo" width="150">
 
-  <section class="menu">
-    <h2>Menu</h2>
-    <div class="item">
-      <h3>Langkacookies - ₱20</h3>
-      <button id="langkaCookiesButton">Add to Order</button>
-    </div>
-    <div class="item">
-      <h3>Puto Seko w/ Cheese - ₱30</h3>
-      <button id="putoSekoButton">Add to Order</button>
-    </div>
-    <div class="item">
-      <h3>Langkabrownies w/ Langka Jam - ₱45</h3>
-      <button id="langkabrowniesButton">Add to Order</button>
-    </div>
-  </section>
+  <div class="product">
+    <h2>Langkacookies</h2>
+    <p>₱20</p>
+    <button id="langkaCookiesButton">Add to Order</button>
+  </div>
 
-  <section class="order-summary">
-    <h2>Your Order</h2>
-    <ul id="order-list"></ul>
-    <p><strong>Total:</strong> ₱<span id="total">0</span></p>
-  </section>
+  <div class="product">
+    <h2>Puto Seko with Cheese</h2>
+    <p>₱30</p>
+    <button id="putoSekoButton">Add to Order</button>
+  </div>
 
-  <section class="checkout-form">
-    <h2>Checkout</h2>
-    <form id="orderForm">
-      <label for="name">Full Name:</label>
-      <input type="text" id="name" required>
+  <div class="product">
+    <h2>Langkabrownies with Langka Jam</h2>
+    <p>₱30</p>
+    <button id="langkabrowniesButton">Add to Order</button>
+  </div>
 
-      <label for="contact">Contact Number:</label>
-      <input type="text" id="contact" required>
+  <h3>Your Order</h3>
+  <ul id="cartItems"></ul>
+  <p id="totalPrice">Total: ₱0</p>
 
-      <label for="department">Department for Delivery:</label>
-      <input type="text" id="department" required>
+  <h3>Checkout</h3>
+  <form>
+    <label for="name">Name:</label><br>
+    <input type="text" id="name"><br><br>
 
-      <button type="submit">Place Order</button>
-    </form>
-    <div id="confirmation" class="hidden">
-      <h3>Thank you for your order! 🍽️</h3>
-      <p>We’ll deliver your goodies soon!</p>
-    </div>
-  </section>
+    <label for="contact">Contact Number:</label><br>
+    <input type="text" id="contact"><br><br>
+
+    <label for="department">Delivery Department:</label><br>
+    <input type="text" id="department"><br><br>
+
+    <input type="submit" value="Place Order">
+  </form>
 
   <script src="script.js"></script>
 </body>
