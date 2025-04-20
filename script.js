@@ -1,4 +1,4 @@
-let order = [];
+let cart = [];
 let total = 0;
 
 function addToCart(item, price) {
@@ -19,14 +19,16 @@ function updateCart() {
   document.getElementById('totalPrice').textContent = `Total: ₱${total}`;
 }
 
-document.getElementById('langkaCookiesButton').addEventListener('click', () => {
-  addToCart('Langkacookies', 20);
-});
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('langkaCookiesButton').addEventListener('click', () => {
+    addToCart('Langkacookies', 20);
+  });
 
-document.getElementById('putoSekoButton').addEventListener('click', () => {
-  addToCart('Puto Seko with Cheese', 30);
-});
+  document.getElementById('putoSekoButton').addEventListener('click', () => {
+    addToCart('Puto Seko with Cheese', 30);
+  });
 
-document.getElementById('langkabrowniesButton').addEventListener('click', () => {
-  addToCart('Langkabrownies with Langka Jam', 30);
+  document.getElementById('langkabrowniesButton').addEventListener('click', () => {
+    addToCart('Langkabrownies with Langka Jam', 30);
+  });
 });
