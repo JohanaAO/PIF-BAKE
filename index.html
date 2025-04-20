@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PIF BAKE - Order Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="PIF BAKE Logo" class="logo">
+    <h1>Welcome to PIF BAKE!</h1>
+    <p>Delicious treats made from organic jackfruit seed flour 🍪</p>
+  </header>
+
+  <section class="menu">
+    <h2>Menu</h2>
+    <div class="item">
+      <h3>Langkacookies - ₱50</h3>
+      <button onclick="addToOrder('Langkacookies', 50)">Add to Order</button>
+    </div>
+    <div class="item">
+      <h3>Puto Seko w/ Cheese - ₱30</h3>
+      <button onclick="addToOrder('Puto Seko w/ Cheese', 30)">Add to Order</button>
+    </div>
+    <div class="item">
+      <h3>Langkabrownies w/ Langka Jam - ₱45</h3>
+      <button onclick="addToOrder('Langkabrownies', 45)">Add to Order</button>
+    </div>
+  </section>
+
+  <section class="order-summary">
+    <h2>Your Order</h2>
+    <ul id="order-list"></ul>
+    <p><strong>Total:</strong> ₱<span id="total">0</span></p>
+  </section>
+
+  <section class="checkout-form">
+    <h2>Checkout</h2>
+    <form id="orderForm">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="contact">Contact Number:</label>
+      <input type="text" id="contact" required>
+
+      <label for="department">Department for Delivery:</label>
+      <input type="text" id="department" required>
+
+      <button type="submit">Place Order</button>
+    </form>
+    <div id="confirmation" class="hidden">
+      <h3>Thank you for your order! 🍽️</h3>
+      <p>We’ll deliver your goodies soon!</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
