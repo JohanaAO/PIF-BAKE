@@ -1,43 +1,26 @@
 
 let cart = [];
-let total = 0;
 
-function addToCart(item, price) {
-    cart.push(item);
-    total += price;
-    updateCart();
+function addToCart(itemName, itemPrice) {
+    cart.push({ name: itemName, price: itemPrice });
+    updateOrderSummary();
 }
 
-function updateCart() {
-    const list = document.getElementById('cartItems');
-    list.innerHTML = '';
-    cart.forEach(product => {
-        const li = document.createElement('li');
-        li.textContent = product;
-        list.appendChild(li);
-    });
+function updateOrderSummary() {
+    const summaryDiv = document.getElementById('order-summary');
+    const orderTextarea = document.getElementById('order');
 
-    document.getElementById('totalPrice').textContent = `Total: ₱${total}`;
+    if (cart.length === 0) {
+        summaryDiv.innerHTML = '<h3>Order Summary</h3><p>No orders yet.</p>';
+        orderTextarea.value = '';
+    } else {
+        const orderList = cart.map(item => `${item.name} (₱${item.price})`).join('\n');
+        summaryDiv.innerHTML = `<h3>Order Summary</h3><p>${orderList.replace(/\n/g, "<br>")}</p><button id="clearOrder" onclick="clearCart()">Clear Order</button>`;
+        orderTextarea.value = orderList;
+    }
 }
 
 function clearCart() {
     cart = [];
-    total = 0;
-    updateCart();
+    updateOrderSummary();
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('langkaCookiesButton').addEventListener('click', () => {
-        addToCart('Langkacookies', 20);
-    });
-
-    document.getElementById('putoSekoButton').addEventListener('click', () => {
-        addToCart('Puto Seko with Cheese', 30);
-    });
-
-    document.getElementById('langkabrowniesButton').addEventListener('click', () => {
-        addToCart('Langkabrownies with Langka Jam', 30);
-    });
-
-    document.getElementById('clearCartButton').addEventListener('click', clearCart);
-});
