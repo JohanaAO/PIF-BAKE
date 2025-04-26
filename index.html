@@ -3,53 +3,102 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>PIF BAKE</title>
+    <title>PIF BAKE - Order Now</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Brush Script MT', cursive;
+            text-align: center;
+            padding: 20px;
+        }
+        img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 5px;
+        }
+        p.tagline {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .menu, .order-section {
+            margin: 20px auto;
+            max-width: 500px;
+            text-align: left;
+        }
+        button {
+            margin-top: 5px;
+        }
+        #clearOrder {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <div class="header">
-        <img src="pifbake-logo.png" alt="PIF BAKE Logo" class="logo">
-        <h1>PIF BAKE</h1>
-        <p class="tagline">Bawat Kagat, Dama Mo Ang Sarap</p>
+
+    <!-- LOGO -->
+    <img src="PIF BAKE (1).png" alt="PIF BAKE Logo">
+
+    <!-- NAME -->
+    <h1>PIF BAKE</h1>
+
+    <!-- TAGLINE -->
+    <p class="tagline">Bringing Sweetness Closer to You!</p>
+
+    <!-- MENU -->
+    <div class="menu">
+        <h2>Our Products</h2>
+        <div>
+            <strong>Langkacookies</strong> (₱20) 
+            <button onclick="addToCart('Langkacookies', 20)">Add to Order</button>
+        </div>
+        <div>
+            <strong>Puto Seko with Cheese</strong> (₱30)
+            <button onclick="addToCart('Puto Seko with Cheese', 30)">Add to Order</button>
+        </div>
+        <div>
+            <strong>Langkabrownies with Langka Jam</strong> (₱30)
+            <button onclick="addToCart('Langkabrownies with Langka Jam', 30)">Add to Order</button>
+        </div>
     </div>
 
-    <div class="product">
-        <h2>Langkacookies</h2>
-        <p>₱20</p>
-        <button id="langkaCookiesButton">Add to Order</button>
+    <!-- ORDER SUMMARY -->
+    <div id="order-summary" class="order-section">
+        <h3>Order Summary</h3>
+        <p>No orders yet.</p>
+        <button id="clearOrder" onclick="clearCart()">Clear Order</button>
     </div>
 
-    <div class="product">
-        <h2>Puto Seko with Cheese</h2>
-        <p>₱30</p>
-        <button id="putoSekoButton">Add to Order</button>
+    <!-- CHECKOUT FORM -->
+    <div class="order-section">
+        <h3>Checkout</h3>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <label for="name">Name:</label><br>
+            <input type="text" name="name" id="name" required><br><br>
+
+            <label for="contact">Contact Number:</label><br>
+            <input type="text" name="contact" id="contact" required><br><br>
+
+            <label for="department">Delivery Department:</label><br>
+            <input type="text" name="department" id="department" required><br><br>
+
+            <label for="order">Your Order:</label><br>
+            <textarea name="order" id="order" rows="5" readonly required></textarea><br><br>
+
+            <input type="submit" value="Place Order">
+        </form>
     </div>
-
-    <div class="product">
-        <h2>Langkabrownies with Langka Jam</h2>
-        <p>₱30</p>
-        <button id="langkabrowniesButton">Add to Order</button>
-    </div>
-
-    <h3>Your Order</h3>
-    <ul id="cartItems"></ul>
-    <p id="totalPrice">Total: ₱0</p>
-    <button id="clearCartButton">Clear Order</button>
-
-    <h3>Checkout</h3>
-    <form>
-        <label for="name">Name:</label><br>
-        <input type="text" id="name"><br><br>
-
-        <label for="contact">Contact Number:</label><br>
-        <input type="text" id="contact"><br><br>
-
-        <label for="department">Delivery Department:</label><br>
-        <input type="text" id="department"><br><br>
-
-        <input type="submit" value="Place Order">
-    </form>
 
     <script src="script.js"></script>
+
 </body>
 </html>
