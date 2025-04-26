@@ -1,0 +1,31 @@
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+.header {
+    font-family: 'Brush Script MT', cursive;
+}
+
+.logo {
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+.tagline {
+    font-size: 20px;
+    margin-top: -10px;
+}
+
+.product {
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
