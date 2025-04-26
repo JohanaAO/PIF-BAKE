@@ -45,20 +45,17 @@
 </head>
 <body>
 
-    <!-- LOGO -->
     <img src="PIF BAKE (1).png" alt="PIF BAKE Logo">
 
-    <!-- NAME -->
     <h1>PIF BAKE</h1>
 
-    <!-- TAGLINE -->
-    <p class="tagline">Bringing Sweetness Closer to You!</p>
+    <p class="tagline">Bawat Kagat, Dama Mo Ang Sarap</p>
 
     <!-- MENU -->
     <div class="menu">
         <h2>Our Products</h2>
         <div>
-            <strong>Langkacookies</strong> (₱20) 
+            <strong>Langka Cookies</strong> (₱20) 
             <button onclick="addToCart('Langkacookies', 20)">Add to Order</button>
         </div>
         <div>
@@ -66,19 +63,17 @@
             <button onclick="addToCart('Puto Seko with Cheese', 30)">Add to Order</button>
         </div>
         <div>
-            <strong>Langkabrownies with Langka Jam</strong> (₱30)
+            <strong>Langka Brownies</strong> (₱30)
             <button onclick="addToCart('Langkabrownies with Langka Jam', 30)">Add to Order</button>
         </div>
     </div>
 
-    <!-- ORDER SUMMARY -->
     <div id="order-summary" class="order-section">
         <h3>Order Summary</h3>
         <p>No orders yet.</p>
         <button id="clearOrder" onclick="clearCart()">Clear Order</button>
     </div>
 
-    <!-- CHECKOUT FORM -->
     <div class="order-section">
         <h3>Checkout</h3>
         <form action="https://formspree.io/f/mnndnvrp" method="POST">
