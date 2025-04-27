@@ -14,6 +14,7 @@ function updateOrderSummary() {
         summaryDiv.innerHTML = '<h3>Order Summary</h3><p>No orders yet.</p>';
         orderTextarea.value = '';
     } else {
+        let total = 0;
         const orderList = cart.map(item => `${item.name} (₱${item.price})`).join('\n');
         summaryDiv.innerHTML = `<h3>Order Summary</h3><p>${orderList.replace(/\n/g, "<br>")}</p><button id="clearOrder" onclick="clearCart()">Clear Order</button>`;
         orderTextarea.value = orderList;
