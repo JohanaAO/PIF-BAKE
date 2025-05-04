@@ -1,7 +1,18 @@
 
+const productStock = {
+  Langkacookies: true,
+  PutoSeko: true,
+  LangkaBrownies: false
+};
+
 let cart = [];
 
 function addToCart(itemName, itemPrice) {
+    if (!productStock[itemName]) {
+        alert(itemName + " is currently out of stock.");
+        return;
+    }
+    
     cart.push({ name: itemName, price: itemPrice });
     updateOrderSummary();
 }
