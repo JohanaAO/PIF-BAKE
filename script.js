@@ -1,9 +1,9 @@
 
 const productStock = {
-  Langkacookies: true,
-  PutoSeko With Cheese: true,
-  Langka Brownies: false,
-  PIF Bundle: true
+    "Langkacookies": true,
+    "Puto Seko With Cheese": true,
+    "Langkabrownies": true,
+    "PIF Bundle": true
 };
 
 let cart = [];
@@ -13,7 +13,7 @@ function addToCart(itemName, itemPrice) {
         alert(itemName + " is currently out of stock.");
         return;
     }
-    
+
     cart.push({ name: itemName, price: itemPrice });
     updateOrderSummary();
 }
