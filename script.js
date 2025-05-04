@@ -2,7 +2,7 @@
 const productStock = {
   Langkacookies: true,
   PutoSeko With Cheese: true,
-  LangkaBrownies: false,
+  Langka Brownies: false,
   PIF Bundle: true
 };
 
